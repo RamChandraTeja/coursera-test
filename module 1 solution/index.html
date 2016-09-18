@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style src="/style.css">
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="lunchmenu.js"></script>
+
+  </head>
+<body>
+   <div class="container" ng-controller="CustomSeparatorCtrl">
+     <h1>Lunch Checker</h1>
+
+         <div ng-controller="CustomSeparatorCtrl" class="form-group" ng-model="ctrl.tags" md-separator-keys="ctrl.keys">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message" ng-if="limit==3">
+
+         </div>
+   </div>
+   <div ng-controller="CustomSeparatorCtrl as ctrl" layout="column" ng-cloak="" class="chipsdemoCustomSeparatorKeys" ng-app="MyApp">
+  <md-content class="md-padding" layout="column">
+
+    <h2 class="md-title">Use <code>md-separator-keys</code> to customize the key codes which trigger chip creation.</h2>
+    <md-chips ng-model="ctrl.tags" md-separator-keys="ctrl.keys" placeholder="Enter a tag" secondary-placeholder="Comma separated tags"></md-chips>
+    <br>
+
+    <h2 class="md-title">Add custom separator key codes such as semicolon for e-mails.</h2>
+    <md-chips ng-model="ctrl.contacts" md-separator-keys="ctrl.customKeys"></md-chips>
+
+  </md-content>
+</div>
+
+
+</body>
+</html>
